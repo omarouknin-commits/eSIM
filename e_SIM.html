@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldeSIM - Travel the world</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css sim.css">
+    <link rel="stylesheet" href="js sim.js">
+</head>
+<body >
+    <header>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">W</div>
+            <span class="logo-text">WorldeSIM</span>
+        </div>
+        <div class="nav-links">
+            <a href="e_SIM.html">Home</a>
+            <a href="Catalogue.html">Destinations</a>
+            <a href="About.html">About</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="Login.html" class="login">Login</a>
+            <a href="Signup.html" class="signup">Sign up</a>
+            <a href="addtocart.html" class="add-to-cart">add to cart</a> <span id="cart-count">0</span>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="hero" >
+        <h2 class="h2">Travel the world without losing connection</h2>
+        <p>Affordable eSIM data plans for 180+ countries. Activate instantly, no physical SIM required.</p>
+    </div>
+    <div class="search-container" >
+    <input type="search" id="search1" placeholder="Search eSIM by your destination country..." class="search-bar"  autocomplete="off">
+    <div id="countriesDropdown" class="dropdown" style="display: none; position: absolute; background: white; border: 1px solid #ccc; border-radius: 8px; width: 100%; max-width: 400px; margin-top: 4px; z-index: 1000;"></div>
+    
+    <button class="browse-button">Browse all plans</button>
+    <a href="About.html"><button class="learn-more">Learn more</button></a>
+    
+    
+    </div>
+    
+</section>
+<h2 class="card_title">Popular Destinations</h2>
+    <p class="titre">Get started with our most popular eSIM data plans for travelers.<br> Plan de WORLDCUP 2026.</p>
+<article class="cards-container">
+<div id="cards"></div>
+<script>
+     const countries = [
+ 
+  { name: "Canada", flag: "🇨🇦" },
+  { name: "Mexico", flag: "🇲🇽" },
+  { name: "United States", flag: "🇺🇸" },
+];
+const container = document.getElementById("cards");
+
+countries.forEach(country => {
+    container.innerHTML += `
+    <div class="card">
+        <div class="card-image">
+            <span class="flag">${country.flag}</span>
+            <div class="price">$0.00</div>
+        </div>
+
+        <div class="card-content">
+            <h3>${country.name}</h3>
+            <p class="subtitle">${country.name} Travel Plan</p>
+
+            <div class="features">
+                <div class="feature">
+                    <span>📶</span>
+                    <span>5GB</span>
+                </div>
+
+                <div class="feature">
+                    <span>📅</span>
+                    <span>30 Days</span>
+                </div>
+
+                <div class="feature">
+                    <span>📍</span>
+                    <span>Nationwide Coverage</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <button>Add to Cart</button>
+        </div>
+    </div>`;
+});
+</script>
+</article>
+<a href="Catalogue.html">
+<button class="findmore" onclick="catalogue()">View All Packages</button>
+</a>
+
+
+<footer>
+    <div class="footer">
+        &copy; 2026 WorldeSIM. All rights reserved.
+        <p>Global eSIM connectivity for travelers. Stay connected anywhere in the world with our affordable data plans.Global eSIM connectivity for travelers. Stay connected anywhere in the world with our affordable data plans.</p>
+        <h3 class="connect">Connect With Us</h3>
+</a>
+
+    </div>
+    
+
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Barre de navigation 
+    <nav class="">
+        <div class="flex items-center space-x-2">
+            <div class="bg-green-600 text-white p-1 rounded font-bold">W</div>
+            <span class="text-xl font-semibold">WorldeSIM</span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-gray-600">
+            <a href="#" class="hover:text-green-600">Home</a>
+            <a href="#" class="hover:text-green-600">Catalog</a>
+            <a href="#" class="hover:text-green-600">About</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-gray-600">Login</a>
+            <a href="#" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">Sign up</a>
+        </div>
+    </nav>
+
+    Section Héros (Hero Section) 
+    <main class="max-w-4xl mx-auto text-center mt-20 px-4">
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            Travel the world without <br> <span class="text-gray-800">losing connection</span>
+        </h1>
+        
+        <p class="text-gray-500 mt-6 text-lg max-w-2xl mx-auto">
+            Affordable eSIM data plans for 180+ countries. Activate instantly, no physical SIM required.
+        </p>
+
+        Barre de recherche 
+        <div class="mt-10 relative max-w-md mx-auto">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </span>
+            <input type="text" placeholder="Search eSIM by country..." class="block w-full pl-10 pr-3 py-4 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+
+        Boutons d'action 
+        <div class="mt-8 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <button class="bg-green-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-green-700 transition flex items-center">
+                Browse all plans <span class="ml-2">→</span>
+            </button>
+            <button class="text-gray-600 font-medium hover:underline">
+                Learn more
+            </button>
+        </div>
+    </main>-->
+
